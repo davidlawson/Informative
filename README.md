@@ -6,9 +6,9 @@ iOS library for creating an information view positioned below the status bar, si
 Compatible with iOS 6/7, iPhone & iPad.
 
 * Appears on all UINavigationControllers automatically
-* Handles rotation
 * Supports tap handler
-* Supports use of any UIView, default view provided (can also be subclassed)
+* Supports use of any UIView, `InformationView` provided (can be subclassed)
+* No use of private APIs
 
 ![Informative Demo](./informative.gif)
 
@@ -20,6 +20,7 @@ Add ```pod 'Informative', git: 'https://github.com/davidlawson/Informative'``` t
 
 ```objc
 Informative *informative = [Informative singleton];
+
 informative.tapInformationView = ^{
   [[[UIAlertView alloc] initWithTitle:@"Tapped Information View" message:@"Awesome!" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
 };
