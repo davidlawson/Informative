@@ -10,8 +10,6 @@
 
 @property (nonatomic, strong) UILabel *textLabel;
 
-- (id)initWithScreenBounds;
-
 - (void)showView:(BOOL)animated;
 - (void)hideView:(BOOL)animated;
 

@@ -41,6 +41,9 @@
 // Height of status bar when an information view is visible
 @property (nonatomic) float newStatusBarHeight;
 
+// Duration of hide/show animations
+@property (nonatomic) float animationDuration;
+
 // Block that updates each information view, e.g. for animations
 - (void)modifyInformationViews:(void (^)(UIView *))modifyBlock;
 

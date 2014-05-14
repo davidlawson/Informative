@@ -5,19 +5,24 @@
 
 #import "UINavigationBar+Informative.h"
 #import "Informative.h"
+#import <JRSwizzle/JRSwizzle.h>
 
 @implementation UINavigationBar (Informative)
 
-- (CGSize)sizeThatFits:(CGSize)size
++ (void)load
 {
-    // Grab the screen width and set the status bar size as appropriate
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self jr_swizzleMethod:@selector(sizeThatFits:) withMethod:@selector(informative_sizeThatFits:) error:nil];
+    });
+}
 
-    CGRect screenBounds = [[UIScreen mainScreen] bounds]; // portrait bounds
-    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]))
-        screenBounds.size = CGSizeMake(screenBounds.size.height, screenBounds.size.width);
+- (CGSize)informative_sizeThatFits:(CGSize)size
+{
+    CGSize normalSize = [self informative_sizeThatFits:size];
 
     return CGSizeMake(
-            screenBounds.size.width,
+            normalSize.width,
             [Informative singleton].showInformation ? [Informative singleton].newStatusBarHeight : 40
     );
 }

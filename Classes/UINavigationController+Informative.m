@@ -75,7 +75,7 @@
 
     if (animated)
     {
-        [UIView animateWithDuration:1.0f
+        [UIView animateWithDuration:[Informative singleton].animationDuration
                               delay:0
                             options:UIViewAnimationOptionAllowUserInteraction
                          animations:^{
@@ -113,6 +113,11 @@
     if (!informationView)
     {
         informationView = [[Informative singleton] newInformationView];
+
+        CGRect informationViewFrame = informationView.frame;
+        informationViewFrame.size.width = self.navigationBar.frame.size.width;
+        informationView.frame = informationViewFrame;
+
         [self setInformationView:informationView];
     }
 

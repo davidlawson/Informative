@@ -63,12 +63,15 @@
 
 - (void)setupDefaults
 {
+    self.animationDuration = 1.0f;
     self.newStatusBarHeight = 60;
 
     self.createInformationView = ^UIView*
     {
-        return [[InformationView alloc] initWithScreenBounds];
+        return [[InformationView alloc] init];
     };
+
+    __weak typeof(self) weakSelf = self;
 
     self.showInformationView = ^(UIView *view, BOOL animated)
     {
@@ -85,7 +88,7 @@
             view.frame = CGRectMake(0, -40, 320, 20);
             view.alpha = 0.0f;
 
-            [UIView animateWithDuration:1.0f
+            [UIView animateWithDuration:weakSelf.animationDuration
                                   delay:0
                                 options:UIViewAnimationOptionAllowUserInteraction
                              animations:animateTo
@@ -109,7 +112,7 @@
 
         if (animated)
         {
-            [UIView animateWithDuration:1.0f
+            [UIView animateWithDuration:weakSelf.animationDuration
                                   delay:0
                                 options:UIViewAnimationOptionAllowUserInteraction
                              animations:animateTo

@@ -4,29 +4,19 @@
 //
 
 #import "InformationView.h"
+#import "Informative.h"
 #import <Masonry/Masonry.h>
 
 @implementation InformationView
 
-- (id)initWithScreenBounds
+- (id)init
 {
-    CGRect screenBounds = [[UIScreen mainScreen] bounds]; // portrait bounds
-    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]))
-    {
-        screenBounds.size = CGSizeMake(screenBounds.size.height, screenBounds.size.width);
-    }
-
-    screenBounds.origin.y = -40;
-    screenBounds.size.height = 20;
-
-    return [self initWithFrame:screenBounds];
-}
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self)
     {
+        // Frame will be set in UINavigationController+Informative
+        self.frame = CGRectMake(0, -40, 0, 20);
+
         self.textLabel = [[UILabel alloc] init];
         self.textLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.textLabel];
@@ -75,7 +65,7 @@
         self.frame = CGRectMake(0, -40, self.bounds.size.width, 20);
         self.alpha = 0.0f;
 
-        [UIView animateWithDuration:1.0f
+        [UIView animateWithDuration:[Informative singleton].animationDuration
                               delay:0
                             options:UIViewAnimationOptionAllowUserInteraction
                          animations:animateTo
@@ -96,7 +86,7 @@
 
     if (animated)
     {
-        [UIView animateWithDuration:1.0f
+        [UIView animateWithDuration:[Informative singleton].animationDuration
                               delay:0
                             options:UIViewAnimationOptionAllowUserInteraction
                          animations:animateTo
