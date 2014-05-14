@@ -1,0 +1,9 @@
+.DS_Store
+.Trashes
+*.swp
+*~.nib
+DerivedData/
+build/
+Pods/
+.idea/
+*.xcuserstate

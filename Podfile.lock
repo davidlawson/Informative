@@ -1,0 +1,20 @@
+PODS:
+  - Informative (0.0.1)
+  - JRSwizzle (1.0)
+  - Masonry (0.5.0)
+
+DEPENDENCIES:
+  - Informative (from `./`)
+  - JRSwizzle
+  - Masonry
+
+EXTERNAL SOURCES:
+  Informative:
+    :path: ./
+
+SPEC CHECKSUMS:
+  Informative: bf299d0d19134fe197d0412175b99fabcb9dc249
+  JRSwizzle: 6242ff38485d870fc2636899048ee1ab883ae587
+  Masonry: bef482b29f00b33a2da916e1011af85f5d371d66
+
+COCOAPODS: 0.32.1
