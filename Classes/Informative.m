@@ -6,6 +6,7 @@
 #import "Informative.h"
 #import "InformationView.h"
 #import <JRSwizzle/JRSwizzle.h>
+#import <objc/message.h>
 #import "UIResponder+Informative.h"
 
 @interface Informative()
@@ -24,8 +25,21 @@
     dispatch_once(&onceToken, ^{
         singleton = [[self alloc] init];
 
-        // Adds a bit of code to the delegate to handle a status bar tap
-        Class delegateClass = [UIApplication sharedApplication].delegate.class;
+        id<UIApplicationDelegate> delegate = [UIApplication sharedApplication].delegate;
+
+        Class delegateClass;
+
+        // UrbanAirship uses a proxy for the app delegate
+        if ([NSStringFromClass(delegate.class) isEqualToString:@"UAAppDelegateProxy"])
+        {
+            delegateClass = [objc_msgSend(delegate, sel_getUid("originalAppDelegate")) class];
+        }
+        else
+        {
+            delegateClass = delegate.class;
+        }
+
+        // Adds a bit of code to the app delegate to handle a status bar tap
         [delegateClass jr_swizzleMethod:@selector(touchesBegan:withEvent:) withMethod:@selector(informative_touchesBegan:withEvent:) error:nil];
     });
     return singleton;

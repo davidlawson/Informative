@@ -7,11 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "Informative.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Informative singleton].tapInformationView = ^{
+        [[[UIAlertView alloc] initWithTitle:@"Tapped Information View" message:@"Awesome!" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
+    };
+
     return YES;
 }
 							
