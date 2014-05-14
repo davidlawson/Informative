@@ -16,20 +16,17 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Informative"
-  s.version      = "0.0.1"
-  s.summary      = "A short description of Informative."
+  s.version      = "1.0"
+  s.summary      = "iOS library for creating an information view positioned below the status bar"
 
   s.description  = <<-DESC
-                   A longer description of Informative in Markdown format.
+                   iOS library for creating an information view positioned below the status bar, similar to the inbuilt iOS in-call status bar.
 
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
+                   Compatible with iOS 6/7.
                    DESC
 
-  s.homepage     = "http://EXAMPLE/Informative"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+  s.homepage     = "https://github.com/davidlawson/Informative"
+  s.screenshots  = "https://github.com/davidlawson/Informative/raw/master/informative.gif"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -78,7 +75,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/Informative.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/davidlawson/Informative.git", :branch => "master" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -132,5 +129,8 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+
+  s.dependency 'Masonry'
+  s.dependency 'JRSwizzle'
 
 end

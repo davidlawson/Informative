@@ -9,6 +9,8 @@ NSString * const kStatusBarTappedNotification = @"statusBarTappedNotification";
 
 @implementation UIResponder (Informative)
 
+// Added into the application delegate to handle taps on the status bar
+
 - (void)informative_touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self informative_touchesBegan:touches withEvent:event];

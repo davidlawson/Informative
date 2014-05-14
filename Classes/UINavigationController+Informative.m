@@ -18,6 +18,8 @@
 
 + (void)load
 {
+    // Add code into all UINavigationControllers to show an information view when necessary
+
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self jr_swizzleMethod:@selector(viewWillAppear:) withMethod:@selector(informative_viewWillAppear:) error:nil];

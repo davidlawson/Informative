@@ -5,7 +5,7 @@
 
 #import "Informative.h"
 #import "InformationView.h"
-#import "JRSwizzle.h"
+#import <JRSwizzle/JRSwizzle.h>
 #import "UIResponder+Informative.h"
 
 @interface Informative()
@@ -24,6 +24,7 @@
     dispatch_once(&onceToken, ^{
         singleton = [[self alloc] init];
 
+        // Adds a bit of code to the delegate to handle a status bar tap
         Class delegateClass = [UIApplication sharedApplication].delegate.class;
         [delegateClass jr_swizzleMethod:@selector(touchesBegan:withEvent:) withMethod:@selector(informative_touchesBegan:withEvent:) error:nil];
     });

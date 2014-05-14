@@ -29,9 +29,13 @@
 // Block used to animate hiding of information view
 @property (nonatomic, copy) void (^showInformationView)(UIView *view, BOOL animated);
 
+// Block called when you tap the information view
 @property (nonatomic, copy) void (^tapInformationView)();
 
+// Creates a new information view, adds a gesture recogniser and adds it to the set of information views
 - (UIView *)newInformationView;
+
+// Removes an information view from the set of information views
 - (void)removeInformationView:(UIView *)informationView;
 
 // Height of status bar when an information view is visible

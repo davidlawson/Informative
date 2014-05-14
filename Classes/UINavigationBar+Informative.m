@@ -10,11 +10,12 @@
 
 - (CGSize)sizeThatFits:(CGSize)size
 {
+    // Grab the screen width and set the status bar size as appropriate
+
     CGRect screenBounds = [[UIScreen mainScreen] bounds]; // portrait bounds
-    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]))
         screenBounds.size = CGSizeMake(screenBounds.size.height, screenBounds.size.width);
-    }
-    
+
     return CGSizeMake(
             screenBounds.size.width,
             [Informative singleton].showInformation ? [Informative singleton].newStatusBarHeight : 40
