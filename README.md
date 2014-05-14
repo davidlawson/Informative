@@ -35,3 +35,7 @@ informative.createInformationView = ^UIView*
 // Inside reachability handler
 [Informative singleton].showInformation = !reachable;
 ```
+
+### License
+
+This library is available under the [MIT license](http://www.opensource.org/licenses/mit-license.php).

@@ -159,8 +159,8 @@
 
 - (void)removeInformationView:(UIView *)informationView
 {
-    int n = informationView.gestureRecognizers.count;
-    for (int i = 0; i < n; i++)
+    long n = informationView.gestureRecognizers.count;
+    for (long i = 0; i < n; i++)
         [informationView removeGestureRecognizer:informationView.gestureRecognizers.firstObject];
 
     [self.informationViews removeObject:informationView];
