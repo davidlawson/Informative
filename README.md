@@ -14,7 +14,7 @@ Compatible with iOS 6/7, iPhone & iPad.
 
 ### Installation
 
-Add ```pod 'Informative', git: 'https://github.com/davidlawson/Informative'``` to your Podfile.
+Add ```pod 'Informative'``` to your Podfile.
 
 ### Example Code
 
