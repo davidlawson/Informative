@@ -27,7 +27,7 @@ informative.tapInformationView = ^{
 
 informative.createInformationView = ^UIView*
 {
-  InformationView *notReachableView = [[InformationView alloc] initWithScreenBounds];
+  InformationView *notReachableView = [[InformationView alloc] init];
   notReachableView.text = @"No Internet Connection";
   return notReachableView;
 };
