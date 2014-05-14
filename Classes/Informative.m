@@ -51,12 +51,13 @@
 
 - (void)tappedInformationView
 {
-    self.tapInformationView();
+    if (self.tapInformationView)
+        self.tapInformationView();
 }
 
 - (void)statusBarTappedAction
 {
-    if (self.showInformation)
+    if (self.showInformation && self.tapInformationView)
         self.tapInformationView();
 }
 
