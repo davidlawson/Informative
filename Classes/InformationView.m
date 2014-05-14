@@ -46,12 +46,14 @@
     return self;
 }
 
+// Set the autoresize mask after the screen rotation has been applied
 - (void)didMoveToWindow
 {
     [super didMoveToWindow];
+
+    // We can't use autolayout as the superview is the UINavigationBar
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 }
-
 
 - (void)setDefaults
 {
