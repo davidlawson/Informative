@@ -1,2 +1,2 @@
-#platform :ios, "6.0"
+platform :ios, "6.0"
 pod 'Informative', path: './'
