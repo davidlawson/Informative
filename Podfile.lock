@@ -1,9 +1,9 @@
 PODS:
-  - Informative (1.0):
+  - Informative (0.0.2):
     - JRSwizzle
     - Masonry
   - JRSwizzle (1.0)
-  - Masonry (0.5.0)
+  - Masonry (0.5.1)
 
 DEPENDENCIES:
   - Informative (from `./`)
@@ -13,8 +13,8 @@ EXTERNAL SOURCES:
     :path: ./
 
 SPEC CHECKSUMS:
-  Informative: cf5dabe3c6209cd4e73a842f96e920e347bedc4a
-  JRSwizzle: 6242ff38485d870fc2636899048ee1ab883ae587
-  Masonry: bef482b29f00b33a2da916e1011af85f5d371d66
+  Informative: a3e07fe42c200194dd1993f981bd65375dd8d86c
+  JRSwizzle: 30da7a2c539a4ebf954b16d15f6dd8221c9f6fa5
+  Masonry: 1583542eb69878299bc8a400f28caea96f14a9a3
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1
